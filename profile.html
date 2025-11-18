@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cat Bakery - Profile</title>
+<style>
+/* === FONTS === */
+@font-face {
+  font-family: "Cat Paw";
+  src: url("CatPaw.ttf");
+}
+@font-face {
+  font-family: "Retro Vintage";
+  src: url("RetroVintage.ttf");
+}
+@font-face {
+  font-family: "Wonderian";
+  src: url("Wonderian.ttf");
+}
+
+/* === GLOBAL === */
+body {
+  margin: 0;
+  background-color: #fff;
+  background-image: linear-gradient(45deg, #fff 25%, #ffcccc 25%, #ffcccc 50%, #fff 50%, #fff 75%, #ffcccc 75%, #ffcccc 100%);
+  background-size: 60px 60px;
+  font-family: "Wonderian", sans-serif;
+  color: #993333;
+  overflow-x: hidden;
+  cursor: url('img/cat-cursor.png'), auto;
+}
+
+/* === HEADER === */
+header {
+  text-align: center;
+  font-family: "Cat Paw";
+  font-size: 70px;
+  color: #993333;
+  padding: 30px 0 10px;
+}
+
+/* === NAVBAR === */
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  background-color: #ffcccc;
+  padding: 15px 0;
+  font-family: "Wonderian";
+  font-size: 22px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #993333;
+  transition: 0.3s;
+  position: relative;
+}
+
+nav a:hover {
+  color: #cc0000;
+}
+
+nav a::after {
+  content: "🐾";
+  position: absolute;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+}
+
+nav a:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-5px);
+}
+
+/* === PROFILE CARD === */
+.profile-card {
+  background-color: #fff5f5;
+  width: 380px;
+  margin: 80px auto;
+  border-radius: 25px;
+  padding: 30px;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+  text-align: center;
+  animation: floatIn 1s ease;
+  transition: transform 0.3s;
+}
+
+.profile-card:hover {
+  transform: translateY(-10px) rotate(1deg);
+}
+
+.profile-card img {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  animation: wobble 3s infinite ease-in-out;
+}
+
+.profile-name {
+  font-family: "Wonderian";
+  font-size: 28px;
+  color: #993333;
+  margin-top: 20px;
+}
+
+.profile-info {
+  font-family: "Retro Vintage";
+  font-size: 20px;
+  color: #663333;
+  line-height: 1.6;
+}
+
+.cat-emoji {
+  font-size: 50px;
+  animation: bounce 2s infinite;
+  margin-top: 15px;
+}
+
+/* === ANIMATIONS === */
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes wobble {
+  0%, 100% { transform: rotate(0); }
+  50% { transform: rotate(2deg); }
+}
+
+@keyframes floatIn {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* === CLICK EFFECT === */
+.clicked {
+  transform: scale(1.15) rotate(2deg);
+  transition: transform 0.2s ease;
+}
+</style>
+</head>
+
+<body>
+
+<header>Cat Bakery 🐾</header>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="catalog.html">Catalog</a>
+  <a href="Shopping guide.html">Shopping Guide</a></nav>
+
+<!-- PROFILE CARD -->
+<div class="profile-card" id="profile">
+  <img src="img/images (6).jfif" alt="Profile Picture">
+  <div class="profile-name">Rheina Yasmin Anabel</div>
+  <div class="profile-info">
+    <p>🐱 Kelas: 9A</p>
+    <p>🏫 SMP Islam Cikal Harapan 2</p>
+    <p>✨ “Meow~ stay sweet and curious!” ✨</p>
+  </div>
+  <div class="cat-emoji">ฅ^•ﻌ•^ฅ</div>
+</div>
+
+<!-- SUARA MEOW -->
+<audio id="meow" src="https://www.soundjay.com/cat/cat-meow-1.mp3" preload="auto"></audio>
+
+<script>
+const navLinks = document.querySelectorAll('nav a');
+const meowSound = document.getElementById('meow');
+const profileCard = document.getElementById('profile');
+
+navLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    link.classList.add('clicked');
+    meowSound.currentTime = 0;
+    meowSound.play();
+    setTimeout(() => link.classList.remove('clicked'), 300);
+  });
+});
+
+profileCard.addEventListener('click', () => {
+  meowSound.currentTime = 0;
+  meowSound.play();
+  profileCard.classList.add('clicked');
+  setTimeout(() => profileCard.classList.remove('clicked'), 300);
+});
+</script>
+
+</body>
+</html>

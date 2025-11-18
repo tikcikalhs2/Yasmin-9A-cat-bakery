@@ -1,0 +1,308 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Cat Bakery</title>
+<style type="text/css">
+  body {
+    background-color: #FFFFFF;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    position: relative;
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* --- Font dan warna asli sesuai kode lama --- */
+  .style5 {
+    font-family: "Cat Paw";
+    font-size: 78px;
+    color: #993333;
+  }
+
+  .style9 {
+    font-size: 40px;
+    font-family: Wonderian;
+    color: #993333;
+  }
+
+  .style14 {
+    font-family: "Retro Vintage";
+    font-size: 24px;
+    color: #990000;
+  }
+
+  .style15 {
+    font-size: 24px;
+    font-family: Wonderian;
+    color: #993333;
+  }
+
+  .style17 {
+    font-family: "Retro Vintage";
+  }
+
+  .style19 {
+    font-family: "Cat Paw";
+    font-size: xx-large;
+  }
+
+  .style21 {
+    font-size: 89px;
+    color: #CC3333;
+  }
+
+  /* --- Modern Menu --- */
+  .menu-bar {
+    display: flex;
+    justify-content: center;
+    background-color: #FFFFCC; /* warna asli Home */
+    gap: 2rem;
+    padding: 1rem 0;
+  }
+
+  .menu-item {
+    font-family: Wonderian;
+    font-size: 24px;
+    color: #993333;
+    padding: 12px 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    user-select: none;
+    border: 1.5px solid transparent;
+  }
+
+  /* warna hover disesuaikan dengan warna background menu masing-masing */
+  .menu-item:nth-child(1):hover {
+    background-color: #FFCCCC; /* Home background color */
+    color: #990000;
+    border-color: #990000;
+  }
+
+  .menu-item:nth-child(2) {
+    background-color: #FFCC99; /* Shopping Guide */
+  }
+  .menu-item:nth-child(2):hover {
+    background-color: #ffb366;
+    color: #663300;
+    border-color: #663300;
+  }
+
+  .menu-item:nth-child(3) {
+    background-color: #FFCC66; /* Catalog */
+  }
+  .menu-item:nth-child(3):hover {
+    background-color: #ffad33;
+    color: #663300;
+    border-color: #663300;
+  }
+
+  .menu-item:nth-child(4) {
+    background-color: #FF9933; /* Profile */
+  }
+  .menu-item:nth-child(4):hover {
+    background-color: #e67e22;
+    color: #4d2e00;
+    border-color: #4d2e00;
+  }
+
+  /* --- Table BEST SELLER --- */
+  table.best-seller-table {
+    width: 1247px;
+    border-collapse: collapse;
+    background-color: #FFCCCC; /* sesuai semula */
+    margin: 0 auto 2rem auto;
+  }
+
+  table.best-seller-table td {
+    padding: 0.5rem;
+  }
+
+  marquee span {
+    font-family: Wonderian;
+    font-size: 40px;
+    color: #993333;
+  }
+
+  /* --- Product Box Styling --- */
+  .product-table {
+    width: 1250px;
+    margin: 0 auto 2rem auto;
+    border-collapse: separate;
+    border-spacing: 15px;
+  }
+
+  .product-table td {
+    background-color: #CC9999;
+    border-radius: 15px;
+    padding: 12px;
+    text-align: center;
+    box-shadow: 0 3px 7px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+  }
+
+  .product-table td:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 7px 15px rgba(0,0,0,0.2);
+  }
+
+  .product-name {
+    font-family: "Retro Vintage";
+    font-size: 24px;
+    color: #990000;
+    margin: 0.5rem 0 0 0;
+  }
+
+  .product-price {
+    background-color: #CC9966;
+    border-radius: 0 0 15px 15px;
+    padding: 0.6rem 0;
+    font-family: "Retro Vintage";
+    font-size: 24px;
+    text-align: center;
+  }
+
+  /* --- Buy Now Section --- */
+  .buy-now {
+    text-align: center;
+    margin-bottom: 3rem;
+  }
+
+  .buy-now .style19 {
+    vertical-align: middle;
+  }
+
+  .buy-now .style21 {
+    vertical-align: middle;
+    margin: 0 1rem;
+  }
+
+</style>
+
+<!-- Suara kucing meow -->
+<audio id="meow-sound" src="https://www.soundjay.com/cat/cat-meow-1.mp3" preload="auto"></audio>
+
+</head>
+
+<body>
+  <div align="center" style="margin-top: 20px;">
+    <span class="style5">Cat Bakery</span>
+    <img src="file:///C|/Users/PesonaEdu Solution/Downloads/pngegg.png" width="111" height="103" alt="Cat Bakery Logo" />
+  </div>
+
+  <div align="center" style="margin-top: 20px;">
+    <p>
+      <img src="file:///C|/Users/PesonaEdu Solution/Downloads/pngwing.com.png" width="167" height="141" alt="Decoration" />
+      <img src="img/bad0bb90d13d82677a53f28bd497adbe.jpg" width="1005" height="362" alt="Banner" />
+      <img src="file:///C|/Users/PesonaEdu Solution/Downloads/pngwing.com.png" width="167" height="141" alt="Decoration" />
+    </p>
+
+    <!-- MENU -->
+    <div class="menu-bar">
+      <div class="menu-item">Home</div>
+      <div class="menu-item">Shopping Guide</div>
+      <div class="menu-item">Catalog</div>
+      <div class="menu-item">Profile</div>
+    </div>
+
+    <!-- BEST SELLER -->
+    <table class="best-seller-table" border="0" cellpadding="5" cellspacing="6">
+      <tr>
+        <td>
+          <marquee>
+          <span>BEST SELLER</span>
+          </marquee>
+        </td>
+      </tr>
+    </table>
+
+    <!-- PRODUK ROW 1 -->
+    <table class="product-table" border="0" cellpadding="5" cellspacing="6">
+      <tr>
+        <td>
+          <img src="img/7836a06ef9bd7fc9dd9f634b9d1a7be0.jpg" width="299" height="273" alt="Strawberry Sandwich" />
+          <p class="product-name">Strawberry Sandwich</p>
+          <p class="product-price">Rp 15,000</p>
+        </td>
+        <td>
+          <img src="img/ssdjd.jpg" width="264" height="278" alt="Dancing Cat Pudding" />
+          <p class="product-name">Dancing Cat Pudding</p>
+          <p class="product-price">Rp 20,000</p>
+        </td>
+        <td>
+          <img src="img/e9941ceec40bd90856ec35bf7298ceec.jpg" width="283" height="280" alt="Cat Donut" />
+          <p class="product-name">Cat Donut</p>
+          <p class="product-price">Rp 20,000</p>
+        </td>
+        <td>
+          <img src="img/c7f6c74f222685194acab270fabca46b.jpg" width="290" height="273" alt="Cat Sundae" />
+          <p class="product-name">Cat Sundae</p>
+          <p class="product-price">Rp 35,000</p>
+        </td>
+      </tr>
+    </table>
+
+    <!-- PRODUK ROW 2 -->
+    <table class="product-table" border="0" cellpadding="5" cellspacing="6" style="margin-bottom: 3rem;">
+      <tr>
+        <td>
+          <img src="img/1q8GIvG.jpeg" width="284" height="268" alt="Cookie Cat Ice Cream" />
+          <p class="product-name">Cookie Cat Ice Cream</p>
+          <p class="product-price">Rp 10,000</p>
+        </td>
+        <td>
+          <img src="img/32b55ce83384d2f771397c3d4e47639e.jpg" width="279" height="267" alt="Spicy Cat Sandwich" />
+          <p class="product-name">Spicy Cat Sandwich</p>
+          <p class="product-price">Rp 10,000</p>
+        </td>
+        <td>
+          <img src="img/cab56db64a7dc0065c4bfefa18680c66.jpg" width="318" height="268" alt="Custom Cat Cake" />
+          <p class="product-name">Custom Cat Cake</p>
+          <p class="product-price">Rp 100,000</p>
+        </td>
+        <td>
+          <img src="img/Blog-1970-01-19-1151025193.jpg" width="303" height="266" alt="Salty Cat Cookies" />
+          <p class="product-name">Salty Cat Cookies</p>
+          <p class="product-price">Rp 6,000</p>
+        </td>
+      </tr>
+    </table>
+
+    <!-- BUY NOW -->
+    <div class="buy-now">
+      <span class="style19">
+        <img src="file:///C|/Users/PesonaEdu Solution/Downloads/pngwing.com (1).png" width="121" height="122" alt="Cat Icon" />
+      <span class="style21">Buy Now</span>      </span><span class="style19"><img src="file:///C|/Users/PesonaEdu Solution/Downloads/pngwing.com (1).png" width="121" height="122" alt="Cat Icon" /></span></div>
+</div>
+
+<script>
+// Get audio element
+const meowSound = document.getElementById('meow-sound');
+
+// Play meow sound function (replay from start if already playing)
+function playMeow() {
+  meowSound.currentTime = 0;
+  meowSound.play();
+}
+
+// Add click sound effect on menu items
+document.querySelectorAll('.menu-item').forEach(item => {
+  item.addEventListener('click', () => {
+    playMeow();
+  });
+});
+
+// Add click sound effect on product items (td in product tables)
+document.querySelectorAll('.product-table td').forEach(td => {
+  td.addEventListener('click', () => {
+    playMeow();
+  });
+});
+</script>
+
+</body>
+</html>

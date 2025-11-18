@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Cat Bakery - Home</title>
+<style>
+/* === FONTS === */
+@font-face { font-family: "Cat Paw"; src: url("CatPaw.ttf"); }
+@font-face { font-family: "Wonderian"; src: url("Wonderian.ttf"); }
+@font-face { font-family: "Retro Vintage"; src: url("RetroVintage.ttf"); }
+
+/* === GLOBAL === */
+body {
+  margin: 0;
+  font-family: "Wonderian", sans-serif;
+  background-color: #fffaf9;
+  background-image: linear-gradient(45deg, #fff 25%, #ffcccc 25%, #ffcccc 50%, #fff 50%, #fff 75%, #ffcccc 75%, #ffcccc 100%);
+  background-size: 60px 60px;
+  overflow-x: hidden;
+  color: #993333;
+}
+
+/* === HEADER === */
+header {
+  text-align: center;
+  padding: 30px 0 10px;
+}
+header h1 {
+  font-family: "Cat Paw";
+  font-size: 78px;
+  color: #993333;
+  margin: 0;
+}
+
+/* === NAVBAR === */
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  background-color: #ffffcc;
+  padding: 1rem 0;
+}
+nav a {
+  font-family: "Wonderian";
+  font-size: 24px;
+  text-decoration: none;
+  color: #993333;
+  background-color: #ffcc99;
+  padding: 12px 30px;
+  border-radius: 10px;
+  border: 1.5px solid transparent;
+  transition: all 0.3s ease;
+}
+nav a:hover {
+  background-color: #ffb366;
+  color: #663300;
+  border-color: #663300;
+  transform: translateY(-3px);
+}
+
+/* === BANNER === */
+.banner {
+  text-align: center;
+  margin-top: 20px;
+}
+.banner img {
+  max-width: 95%;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* === BEST SELLER === */
+.best-seller {
+  margin: 40px auto 20px;
+  width: 80%;
+  background-color: #ffcccc;
+  border-radius: 15px;
+  text-align: center;
+  padding: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+.best-seller h2 {
+  font-family: "Wonderian";
+  font-size: 40px;
+  color: #993333;
+  animation: floatText 2s infinite ease-in-out;
+}
+@keyframes floatText {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+/* === PRODUCT GRID === */
+.products {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
+  max-width: 1200px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+.product-card {
+  background-color: #ffe6e6;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+.product-card:hover { transform: translateY(-8px); box-shadow: 0 10px 18px rgba(0,0,0,0.25); }
+.product-card img { width: 100%; height: 230px; object-fit: cover; }
+.product-name { font-family: "Retro Vintage"; font-size: 22px; color: #993333; margin: 10px 0 5px; }
+.product-price { background-color: #cc9966; padding: 10px 0; border-radius: 0 0 15px 15px; font-family: "Retro Vintage"; font-size: 20px; color: #fffaf0; }
+
+/* === BUY NOW === */
+.buy-now {
+  text-align: center;
+  margin: 50px 0;
+  font-family: "Cat Paw";
+  font-size: 50px;
+  color: #cc3333;
+  animation: bounce 2s infinite;
+}
+@keyframes bounce {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* === CLICK EFFECT === */
+.clicked { transform: scale(1.15); transition: 0.2s ease; }
+
+/* === MODAL DETAIL PRODUK === */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 100;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+}
+.modal-content {
+  background-color: #fff0f5;
+  padding: 20px;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+  position: relative;
+}
+.modal-content img { width: 80%; border-radius: 10px; }
+.close-btn {
+  position: absolute;
+  top: 10px; right: 15px;
+  font-size: 28px; cursor: pointer;
+  font-weight: bold;
+}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Cat Bakery</h1>
+  <img src="img/pngwing.com (2).png" alt="Cat Bakery Logo" width="138" height="103" />
+</header>
+
+<nav>
+  <a href="Shopping guide.html">Shopping Guide</a>
+  <a href="catalog.html">Catalog</a>
+  <a href="profile.html">Profile</a>
+</nav>
+
+<div class="banner">
+  <img src="img/bad0bb90d13d82677a53f28bd497adbe.jpg" alt="Cat Bakery Banner">
+</div>
+
+<div class="best-seller">
+  <h2>✨ BEST SELLER ✨</h2>
+</div>
+
+<div class="products">
+  <div class="product-card" data-name="Strawberry Sandwich" data-price="Rp 15,000" data-img="img/7836a06ef9bd7fc9dd9f634b9d1a7be0.jpg">
+    <img src="img/7836a06ef9bd7fc9dd9f634b9d1a7be0.jpg" alt="Strawberry Sandwich">
+    <p class="product-name">Strawberry Sandwich</p>
+    <p class="product-price">Rp 15,000</p>
+  </div>
+  <div class="product-card" data-name="Dancing Cat Pudding" data-price="Rp 20,000" data-img="img/ssdjd.jpg">
+    <img src="img/ssdjd.jpg" alt="Dancing Cat Pudding">
+    <p class="product-name">Dancing Cat Pudding</p>
+    <p class="product-price">Rp 20,000</p>
+  </div>
+  <div class="product-card" data-name="Cat Donut" data-price="Rp 20,000" data-img="img/e9941ceec40bd90856ec35bf7298ceec.jpg">
+    <img src="img/e9941ceec40bd90856ec35bf7298ceec.jpg" alt="Cat Donut">
+    <p class="product-name">Cat Donut</p>
+    <p class="product-price">Rp 20,000</p>
+  </div>
+  <div class="product-card" data-name="Cat Sundae" data-price="Rp 35,000" data-img="img/c7f6c74f222685194acab270fabca46b.jpg">
+    <img src="img/c7f6c74f222685194acab270fabca46b.jpg" alt="Cat Sundae">
+    <p class="product-name">Cat Sundae</p>
+    <p class="product-price">Rp 35,000</p>
+  </div>
+  <div class="product-card" data-name="Cookie Cat Ice Cream" data-price="Rp 10,000" data-img="img/1q8GIvG.jpeg">
+    <img src="img/1q8GIvG.jpeg" alt="Cookie Cat Ice Cream">
+    <p class="product-name">Cookie Cat Ice Cream</p>
+    <p class="product-price">Rp 10,000</p>
+  </div>
+  <div class="product-card" data-name="Custom Cat Cake" data-price="Rp 100,000" data-img="img/cab56db64a7dc0065c4bfefa18680c66.jpg">
+    <img src="img/cab56db64a7dc0065c4bfefa18680c66.jpg" alt="Custom Cat Cake">
+    <p class="product-name">Custom Cat Cake</p>
+    <p class="product-price">Rp 100,000</p>
+  </div>
+</div>
+
+<div class="buy-now">🐾 Buy Now 🐾</div>
+
+<!-- MODAL DETAIL PRODUK -->
+<div class="modal" id="productModal">
+  <div class="modal-content">
+    <span class="close-btn" id="closeModal">&times;</span>
+    <h2 id="modalName"></h2>
+    <img id="modalImg" src="" alt="Product Image">
+    <p id="modalPrice"></p>
+  </div>
+</div>
+
+<!-- AUDIO BGM -->
+<audio id="bgm" autoplay loop>
+  
+  <a href="honobono-sabou.mp3">
+  <source src="audio/honobono-sabou.mp3" type="audio/mp3">
+</a></audio>
+
+<!-- AUDIO MEOW -->
+<audio id="meow" src="https://www.soundjay.com/cat/cat-meow-1.mp3" preload="auto"></audio>
+
+<script>
+const meowSound = document.getElementById('meow');
+function playMeow() {
+  meowSound.currentTime = 0;
+  meowSound.play();
+}
+
+const modal = document.getElementById('productModal');
+const modalName = document.getElementById('modalName');
+const modalImg = document.getElementById('modalImg');
+const modalPrice = document.getElementById('modalPrice');
+const closeModal = document.getElementById('closeModal');
+
+document.querySelectorAll('.product-card').forEach(card => {
+  card.addEventListener('click', () => {
+    card.classList.add('clicked');
+    playMeow();
+    setTimeout(() => card.classList.remove('clicked'), 250);
+    
+    modal.style.display = 'flex';
+    modalName.textContent = card.dataset.name;
+    modalImg.src = card.dataset.img;
+    modalPrice.textContent = card.dataset.price;
+  });
+});
+
+// Tutup modal
+closeModal.onclick = () => modal.style.display = 'none';
+window.onclick = e => { if (e.target == modal) modal.style.display = 'none'; };
+
+// Suara meow saat klik Buy Now
+document.querySelector('.buy-now').addEventListener('click', () => {
+  playMeow();
+});
+</script>
+
+</body>
+</html>
